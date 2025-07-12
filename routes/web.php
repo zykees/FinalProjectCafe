@@ -112,10 +112,7 @@ Route::post('line-richmenu/create', [LineRichMenuController::class, 'create'])->
         Route::patch('products/{product}/toggle-status', [ProductController::class, 'toggleStatus'])->name('products.toggle-status');
         Route::resource('categories', CategoryController::class);
 
-        // AJAX categories
-            Route::post('api/categories', [CategoryController::class, 'store'])->name('categories.store');
-        Route::post('admin/categories', [CategoryController::class, 'store'])->name('admin.categories.store');
-        // Promotion Bookings
+       
         Route::resource('promotion-bookings', AdminPromotionBookingController::class)->parameters([
             'promotion-bookings' => 'booking'
         ]);
